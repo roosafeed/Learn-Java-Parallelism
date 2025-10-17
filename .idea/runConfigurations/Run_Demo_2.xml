@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run Demo 2" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="samples.roosafeed.demo2.Demo2Main" />
+    <module name="parallelism" />
+    <option name="VM_PARAMETERS" value="-Xms2g -Xmx4g" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="samples.roosafeed.demo2.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
