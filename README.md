@@ -9,7 +9,7 @@ Two main demos are included:
 ---
 
 ## Project Structure
-
+```
 src/main/java/samples/roosafeed/
 ├─ common/ # Shared utilities & interfaces
 │ ├─ Utils.java # Warmup, dataset generation, timing helpers
@@ -19,7 +19,7 @@ src/main/java/samples/roosafeed/
 │ └─ Demo1Main.java
 ├─ demo2/ # Demo 2 
 │ └─ Demo2Main.java
-
+```
 
 ---
 
