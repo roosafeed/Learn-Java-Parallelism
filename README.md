@@ -47,6 +47,11 @@ Run Demo 1:
 
 ```bash
 mvn exec:java@demo1
+```
+
+Run Demo 2:
+
+```bash
 mvn exec:java@demo2
 ```
 
