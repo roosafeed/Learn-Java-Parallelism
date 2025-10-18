@@ -16,7 +16,7 @@ public class Utils {
         System.out.println("Warming up...");
         for (int i = 0; i < 5; i++) {
             for (Warmable warmable : warmables) {
-                warmable.run();
+                warmable.warmup();
             }
         }
     }
@@ -86,7 +86,7 @@ public class Utils {
         Instant start = Instant.now();
 
         // run the actual task
-        Integer result = taskRunner.getSum(input);
+        Integer result = taskRunner.run(input);
 
         Instant end = Instant.now();
 

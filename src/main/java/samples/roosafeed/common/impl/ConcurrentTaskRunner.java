@@ -1,7 +1,7 @@
 package samples.roosafeed.common.impl;
 
-import samples.roosafeed.common.Utils;
 import samples.roosafeed.common.TaskRunner;
+import samples.roosafeed.common.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,16 +11,15 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 // Use virtual threads so tasks overlap
-public class ConcurrentTaskRunner implements TaskRunner {
+public class ConcurrentTaskRunner extends TaskRunner {
     private static final int TASK_COUNT = 15;
 
     @Override
-    public void run() {
+    public void warmup() {
         getSumInternal(List.of(1, 2, 3, 4, 5, 6));
     }
 
-    @Override
-    public Integer getSum(List<Integer> numList) {
+    public Integer run(List<Integer> numList) {
         System.out.println("=== CONCURRENT (" + TASK_COUNT + " virtual threads) ===");
 
         return this.getSumInternal(numList);
@@ -48,17 +47,6 @@ public class ConcurrentTaskRunner implements TaskRunner {
                     throw new RuntimeException(e);
                 }
             }
-        }
-
-        return sum;
-    }
-
-
-
-    private Integer task(List<Integer> numList) {
-        Integer sum = 0;
-        for (Integer num : numList) {
-            sum += num;
         }
 
         return sum;

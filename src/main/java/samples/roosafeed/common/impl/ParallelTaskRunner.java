@@ -1,7 +1,7 @@
 package samples.roosafeed.common.impl;
 
-import samples.roosafeed.common.Utils;
 import samples.roosafeed.common.TaskRunner;
+import samples.roosafeed.common.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,17 +11,16 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 // Truly parallel: fixed thread pool sized to available processors (cores)
-public class ParallelTaskRunner implements TaskRunner {
+public class ParallelTaskRunner extends TaskRunner {
     private int TASK_COUNT_MULTIPLIER = 2;
 
     @Override
-    public void run() {
+    public void warmup() {
         getSumInternal(List.of(1, 2, 3, 4, 5, 6), 2);
     }
 
-    @Override
     // just to prevent printing while warming up
-    public Integer getSum(List<Integer> numList) {
+    public Integer run(List<Integer> numList) {
         int cores = Runtime.getRuntime().availableProcessors();
         int taskCount = cores * TASK_COUNT_MULTIPLIER;
         System.out.println("=== PARALLEL (fixed thread pool, cores=" + cores + ") ===");
@@ -62,12 +61,4 @@ public class ParallelTaskRunner implements TaskRunner {
         this.TASK_COUNT_MULTIPLIER = multiplier;
     }
 
-    private Integer task(List<Integer> numList) {
-        Integer sum = 0;
-        for (Integer num : numList) {
-            sum += num;
-        }
-
-        return sum;
-    }
 }

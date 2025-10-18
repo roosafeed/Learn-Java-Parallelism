@@ -16,8 +16,8 @@ import static samples.roosafeed.common.Utils.runTest;
 // Single task vs Concurrent vs Parallel
 public class Demo1Main {
     public static void main(String[] args) {
-        // generate the test data - something huge!!!
-        List<Integer> testNumbers = generateRandomNumbers(50000000, 0, 10);
+        // generate the test data
+        List<Integer> testNumbers = generateRandomNumbers(500, 0, 10);
 
         // test classes
         TaskRunner singleRunner = new SingleTaskRunner();

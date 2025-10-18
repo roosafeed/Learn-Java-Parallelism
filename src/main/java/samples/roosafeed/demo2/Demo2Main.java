@@ -18,7 +18,7 @@ public class Demo2Main {
 
     public static void main(String[] args) {
         // generate the test data
-        List<Integer> testNumbers = generateRandomNumbers(50000000, 0, 10);
+        List<Integer> testNumbers = generateRandomNumbers(600, 0, 10);
         ParallelTaskRunner parallelRunner = new ParallelTaskRunner();
         Map<Integer, Long> result = new HashMap<>();
 
